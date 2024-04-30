@@ -71,4 +71,15 @@ namespace TicTacToeTest
 	{
 		EXPECT_THROW(Board.update_board(board, 5, 5, true), std::out_of_range);
 	}
+	TEST_F(BoardTest, UpdateBoard_Exception)
+	{
+		try
+		{
+			Board.update_board(board, 5, 5, true);
+		}
+		catch (std::out_of_range ex)
+		{
+			EXPECT_STREQ(ex.what(), "Invalid input");
+		}
+	}
 }
