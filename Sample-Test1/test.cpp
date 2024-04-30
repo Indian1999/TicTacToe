@@ -55,4 +55,11 @@ namespace TicTacToeTest
 		Board.update_board(board, 2, 2, false);
 		EXPECT_EQ(board[2][2], 'O');
 	}
+	TEST_F(BoardTest, CheckForPlayerWinHorizontal)
+	{
+		Board.update_board(board, 0, 0, true);
+		Board.update_board(board, 0, 1, true);
+		Board.update_board(board, 0, 2, true);
+		EXPECT_TRUE(Board.check_for_win(board, true));
+	}
 }
