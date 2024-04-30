@@ -28,4 +28,31 @@ namespace TicTacToeTest
 		Board.update_board(board, 0, 0, false); // O játékos
 		EXPECT_EQ(board[0][0], 'O');
 	}
+
+	class BoardTest : public testing::Test
+	{
+	protected:
+		GameBoard Board;
+		char board[3][3];
+		void SetUp()
+		{
+			for (int i = 0;  i< 3; i++)
+			{
+				for (int j = 0; j < 3; j++)
+				{
+					board[i][j] = '-';
+				}
+			}
+		}
+	};
+	TEST_F(BoardTest, UpdateBoard_Person)
+	{
+		Board.update_board(board, 2, 2, true);
+		EXPECT_EQ(board[2][2], 'X');
+	}
+	TEST_F(BoardTest, UpdateBoard_Computer)
+	{
+		Board.update_board(board, 2, 2, false);
+		EXPECT_EQ(board[2][2], 'O');
+	}
 }
