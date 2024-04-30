@@ -71,7 +71,7 @@ namespace TicTacToeTest
 	{
 		EXPECT_THROW(Board.update_board(board, 5, 5, true), std::out_of_range);
 	}
-	TEST_F(BoardTest, UpdateBoard_Exception)
+	TEST_F(BoardTest, UpdateBoard_Exception_Message)
 	{
 		try
 		{
