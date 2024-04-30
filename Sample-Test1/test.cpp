@@ -67,4 +67,8 @@ namespace TicTacToeTest
 		board[0][0] = board[1][1] = board[2][2] = 'X';
 		EXPECT_TRUE(Board.check_for_win(board, true));
 	}
+	TEST_F(BoardTest, UpdateBoard_Exception)
+	{
+		EXPECT_THROW(Board.update_board(board, 5, 5, true), std::out_of_range);
+	}
 }
