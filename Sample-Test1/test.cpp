@@ -62,4 +62,9 @@ namespace TicTacToeTest
 		Board.update_board(board, 0, 2, true);
 		EXPECT_TRUE(Board.check_for_win(board, true));
 	}
+	TEST_F(BoardTest, CheckForPlayerWinCross)
+	{
+		board[0][0] = board[1][1] = board[2][2] = 'X';
+		EXPECT_TRUE(Board.check_for_win(board, true));
+	}
 }
